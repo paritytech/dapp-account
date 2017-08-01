@@ -18,6 +18,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isProd = process.env.NODE_ENV === 'production';
+
 module.exports = {
   devtool: isProd
     ? '#hidden-source-map'
@@ -155,7 +157,7 @@ module.exports = {
     fs: 'empty'
   },
   plugins: [
-    return new HtmlWebpackPlugin({
+     new HtmlWebpackPlugin({
       filename: 'account.html',
       template: './index.ejs',
       chunks: [ 'account' ]
