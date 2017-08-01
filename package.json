@@ -8,7 +8,8 @@
   "contributors": [],
   "license": "GPL-3.0",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "NODE_ENV=production webpack --colors --progress",
+    "start": "webpack --colors --progress --watch"
   },
   "repository": {
     "type": "git",
@@ -52,13 +53,13 @@
   },
   "dependencies": {
     "@parity/parity.js": "1.8.7",
-    "@parity/shapeshift": "paritytech/js-shapeshift#59d71436b678390a3abdea37d58b5ff06edfd750",
-    "@parity/ui": "paritytech/js-ui#037782bd16e8abf1c169143aa61749a44b94489b",
-    "@parity/shared": "paritytech/js-shared#9bb1d291d8752a827613889498e380fcd3afa8da",
-    "@parity/api": "paritytech/js-api#ade4a6750292a2918676039ea53eea20c4c728bc",
-    "@parity/dapp-address": "paritytech/dapp-address#a53e424768984f03d504e942f2835e20482be956",
-    "@parity/dapp-vaults": "paritytech/dapp-vaults#d97679804d81a5a5b4d6064931211b7f802e335e",
-    "@parity/dapp-accounts": "paritytech/dapp-accounts#bdf7f53d98e589dc19c305d76fe6ade11292fd61",
+    "@parity/shapeshift": "paritytech/js-shapeshift",
+    "@parity/ui": "paritytech/js-ui",
+    "@parity/shared": "paritytech/js-shared",
+    "@parity/api": "paritytech/js-api",
+    "@parity/dapp-address": "paritytech/dapp-address",
+    "@parity/dapp-vaults": "paritytech/dapp-vaults",
+    "@parity/dapp-accounts": "paritytech/dapp-accounts",
     "oo7": "0.5.3",
     "oo7-parity": "0.6.8",
     "oo7-react": "0.4.5",
