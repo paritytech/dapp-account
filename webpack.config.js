@@ -39,12 +39,22 @@ module.exports = {
       {
         test: /\.js$/,
         include: /node_modules\/@parity/,
-        use: [ 'babel-loader' ]
+        use: [ {
+          loader: 'happypack/loader',
+          options: {
+            id: 'babel'
+          }
+        } ]
       },
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: [ 'babel-loader' ]
+        use: [ {
+          loader: 'happypack/loader',
+          options: {
+            id: 'babel'
+          }
+        } ]
       },
       {
         test: /\.json$/,
@@ -78,42 +88,42 @@ module.exports = {
         use: [ 'html-loader', 'markdown-loader' ]
       },
       {
-  	    test: /\.css$/,
-  	    include: /semantic-ui-css/,
-  	    use: [ 'style-loader', 'css-loader' ]
-  	  },
-  	  {
-  	    test: /\.css$/,
-  	    exclude: /semantic-ui-css/,
-  	    use: [
-  	      'style-loader',
-  	      {
-        		loader: 'css-loader',
-        		options: {
-        		  importLoaders: 1,
-        		  localIdentName: '[name]_[local]_[hash:base64:10]',
-        		  minimize: true,
-        		  modules: true
-        		}
-	      },
-	      {
-    		loader: 'postcss-loader',
-    		options: {
-    		  plugins: (loader) => [
-    		    require('postcss-import'),
-    		    require('postcss-nested'),
-    		    require('postcss-simple-vars')
-    		  ]
-		 }
-	      }
-	    ]
-	  },
+        test: /\.css$/,
+        include: /semantic-ui-css/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
+        test: /\.css$/,
+        exclude: /semantic-ui-css/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              localIdentName: '[name]_[local]_[hash:base64:10]',
+              minimize: true,
+              modules: true
+            }
+        },
+        {
+        loader: 'postcss-loader',
+        options: {
+          plugins: (loader) => [
+            require('postcss-import'),
+            require('postcss-nested'),
+            require('postcss-simple-vars')
+          ]
+     }
+        }
+      ]
+    },
       {
         test: /\.(png|jpg)$/,
         use: [ {
           loader: 'file-loader',
           options: {
-            name: 'assets/[name].[hash].[ext]'
+            name: 'assets/[name].[ext]'
           }
         } ]
       },
@@ -122,7 +132,7 @@ module.exports = {
         use: [ {
           loader: 'file-loader',
           options: {
-            name: 'fonts/[name][hash].[ext]'
+            name: 'fonts/[name].[ext]'
           }
         } ]
       },
@@ -136,7 +146,7 @@ module.exports = {
         use: [ {
           loader: 'file-loader',
           options: {
-            name: 'assets/[name].[hash].[ext]'
+            name: 'assets/[name].[ext]'
           }
         } ]
       }
@@ -146,8 +156,7 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {
-    },
+    alias: {},
     modules: [
       path.join(__dirname, 'node_modules')
     ],
