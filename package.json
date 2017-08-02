@@ -9,7 +9,7 @@
   "license": "GPL-3.0",
   "scripts": {
     "build": "NODE_ENV=production webpack --colors --progress",
-    "start": "webpack --colors --progress --watch"
+    "watch": "webpack --colors --progress --watch"
   },
   "repository": {
     "type": "git",
@@ -52,14 +52,14 @@
     "postcss-simple-vars": "4.0.0"
   },
   "dependencies": {
-    "@parity/parity.js": "1.8.7",
-    "@parity/shapeshift": "paritytech/js-shapeshift",
-    "@parity/ui": "paritytech/js-ui",
-    "@parity/shared": "paritytech/js-shared",
     "@parity/api": "paritytech/js-api",
     "@parity/dapp-address": "paritytech/dapp-address",
     "@parity/dapp-vaults": "paritytech/dapp-vaults",
     "@parity/dapp-accounts": "paritytech/dapp-accounts",
+    "@parity/parity.js": "1.8.7",
+    "@parity/shapeshift": "paritytech/js-shapeshift",
+    "@parity/shared": "paritytech/js-shared",
+    "@parity/ui": "paritytech/js-ui",
     "oo7": "0.5.3",
     "oo7-parity": "0.6.8",
     "oo7-react": "0.4.5",

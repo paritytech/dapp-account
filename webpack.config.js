@@ -15,8 +15,9 @@
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HappyPack = require('happypack');
+const webpack = require('webpack');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -24,7 +25,7 @@ module.exports = {
   devtool: isProd
     ? '#hidden-source-map'
     : '#source-map',
-  context: __dirname,
+  context: path.join(__dirname, 'src'),
   entry: {
     bundle: './index.js'
   },
@@ -157,6 +158,11 @@ module.exports = {
     fs: 'empty'
   },
   plugins: [
+    new HappyPack({
+      id: 'babel',
+      threads: 4,
+      loaders: ['babel-loader']
+    }),
     new HtmlWebpackPlugin({
       filename: '../index.html',
       template: './index.ejs',
