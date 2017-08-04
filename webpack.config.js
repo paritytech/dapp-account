@@ -153,6 +153,7 @@ module.exports = {
       template: './index.ejs',
       chunks: ['dist']
     }),
+    isProd && new webpack.optimize.ModuleConcatenationPlugin(),
     isProd && new webpack.optimize.UglifyJsPlugin({
       screwIe8: true,
       sourceMap: true,
