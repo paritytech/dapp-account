@@ -9,5 +9,12 @@
     "transform-object-rest-spread",
     "transform-es2015-modules-commonjs"
   ],
-  "retainLines": true
+  "retainLines": true,
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types"
+      ]
+    }
+  }
 }
