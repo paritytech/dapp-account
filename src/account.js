@@ -31,9 +31,9 @@ import { DeleteIcon, DialIcon, EditIcon, LockedIcon, SendIcon, VerifyIcon, FileD
 
 import shapeshiftBtn from '@parity/shared/assets/images/shapeshift-btn.png';
 
+import DeleteAddress from './DeleteAddress';
 import DeleteAccount from './DeleteAccount';
 import EditMeta from './EditMeta';
-import DeleteAddress from '@parity/dapp-address/src/Delete';
 import ExportStore from '@parity/dapp-accounts/src/ExportAccount/exportStore';
 import Faucet from './Faucet';
 import PasswordManager from './PasswordManager';
