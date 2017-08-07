@@ -26,7 +26,7 @@ import HistoryStore from '@parity/shared/mobx/historyStore';
 import { newError } from '@parity/shared/redux/actions';
 import { setVisibleAccounts } from '@parity/shared/redux/providers/personalActions';
 import { fetchCertifiers, fetchCertifications } from '@parity/shared/redux/providers/certifications/actions';
-import { Actionbar, Button, ConfirmDialog, Input, Page, Portal } from '@parity/ui';
+import { AccountCard, Actionbar, Button, ConfirmDialog, Input, Page, Portal } from '@parity/ui';
 import { DeleteIcon, DialIcon, EditIcon, LockedIcon, SendIcon, VerifyIcon, FileDownloadIcon } from '@parity/ui/Icons';
 
 import shapeshiftBtn from '@parity/shared/assets/images/shapeshift-btn.png';
@@ -40,8 +40,6 @@ import PasswordManager from './PasswordManager';
 import Shapeshift from './Shapeshift';
 import Transfer from './Transfer';
 import Verification from './Verification';
-
-import { AccountCard } from 'parity-reactive-ui';
 
 import Store from './store';
 import Transactions from './Transactions';
@@ -137,7 +135,10 @@ class Account extends Component {
         { this.renderVerificationDialog() }
         { this.renderActionbar(account) }
         <Page padded>
-          <AccountCard account={ account } disabled={ !isAvailable } />
+          <AccountCard
+            account={ account }
+            disabled={ !isAvailable }
+          />
           <Transactions
             address={ address }
           />
