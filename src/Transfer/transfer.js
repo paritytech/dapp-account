@@ -193,7 +193,7 @@ class Transfer extends Component {
 
   renderDialogActions () {
     const { account } = this.props;
-    const { extras, sending, stage } = this.store;
+    const { extras, sending, stage, isValid } = this.store;
 
     const cancelBtn = (
       <Button
@@ -237,7 +237,7 @@ class Transfer extends Component {
     );
     const sendBtn = (
       <Button
-        disabled={ !this.store.isValid || sending }
+        disabled={ !isValid || sending }
         icon={
           <IdentityIcon
             address={ account.address }
