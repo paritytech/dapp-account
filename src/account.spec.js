@@ -34,7 +34,15 @@ function render (props) {
     />,
     {
       context: {
-        store: createRedux()
+        store: createRedux(),
+        api: {
+          transport: {
+            on: sinon.stub()
+          },
+          pubsub: {
+            subscribeAndGetResult: sinon.stub()
+          }
+        }
       }
     }
   ).find('Account').shallow();
