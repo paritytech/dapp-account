@@ -43,6 +43,7 @@ class Transfer extends Component {
   }
 
   static propTypes = {
+    availability: PropTypes.string.isRequired,
     newError: PropTypes.func.isRequired,
     gasLimit: PropTypes.object.isRequired,
 
@@ -187,6 +188,7 @@ class Transfer extends Component {
         onChange={ this.store.onUpdateDetails }
         total={ total }
         totalError={ totalError }
+        availability={ this.props.availability }
       />
     );
   }
@@ -292,13 +294,14 @@ function mapStateToProps (initState, initProps) {
     : null;
 
   return (state) => {
-    const { gasLimit } = state.nodeStatus;
+    const { gasLimit, nodeKind = {} } = state.nodeStatus;
     const { balances } = state;
+    const { availability = 'unknown' } = nodeKind;
 
     const balance = balances[address];
     const sendersBalances = senders ? pick(balances, Object.keys(senders)) : null;
 
-    return { balance, gasLimit, senders, sendersBalances, tokens, wallet };
+    return { availability, balance, gasLimit, senders, sendersBalances, tokens, wallet };
   };
 }
 
