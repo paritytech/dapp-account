@@ -25,7 +25,6 @@ import HardwareStore from '@parity/shared/mobx/hardwareStore';
 import HistoryStore from '@parity/shared/mobx/historyStore';
 import { newError } from '@parity/shared/redux/actions';
 import { setVisibleAccounts } from '@parity/shared/redux/providers/personalActions';
-import { fetchCertifiers, fetchCertifications } from '@parity/shared/redux/providers/certifications/actions';
 import { AccountCard, Actionbar, Button, ConfirmDialog, Input, Page, Portal } from '@parity/ui';
 import { DeleteIcon, DialIcon, EditIcon, LockedIcon, SendIcon, VerifyIcon, FileDownloadIcon } from '@parity/ui/Icons';
 
@@ -55,8 +54,6 @@ class Account extends Component {
 
   static propTypes = {
     accounts: PropTypes.object.isRequired,
-    fetchCertifiers: PropTypes.func.isRequired,
-    fetchCertifications: PropTypes.func.isRequired,
     setVisibleAccounts: PropTypes.func.isRequired,
 
     account: PropTypes.object,
@@ -77,13 +74,6 @@ class Account extends Component {
   }
 
   componentDidMount () {
-    const { params } = this.props;
-
-    if (params.address) {
-      accountsHistory.add(params.address, 'wallet');
-    }
-
-    this.props.fetchCertifiers();
     this.setVisibleAccounts();
   }
 
@@ -106,11 +96,10 @@ class Account extends Component {
   }
 
   setVisibleAccounts (props = this.props) {
-    const { params, setVisibleAccounts, fetchCertifications } = props;
+    const { params, setVisibleAccounts } = props;
     const addresses = [params.address];
 
     setVisibleAccounts(addresses);
-    fetchCertifications(params.address);
   }
 
   render () {
@@ -135,7 +124,6 @@ class Account extends Component {
         { this.renderVerificationDialog() }
         { this.renderActionbar(account) }
         <Page padded>
-          <AccountCard
             account={ account }
             disabled={ !isAvailable }
           />
@@ -540,8 +528,6 @@ function mapStateToProps (state, props) {
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({
-    fetchCertifiers,
-    fetchCertifications,
     newError,
     setVisibleAccounts
   }, dispatch);
