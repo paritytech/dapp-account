@@ -22,7 +22,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import HardwareStore from '@parity/shared/mobx/hardwareStore';
-import HistoryStore from '@parity/shared/mobx/historyStore';
+// import HistoryStore from '@parity/shared/mobx/historyStore';
 import { newError } from '@parity/shared/redux/actions';
 import { setVisibleAccounts } from '@parity/shared/redux/providers/personalActions';
 import { AccountCard, Actionbar, Button, ConfirmDialog, Input, Page, Portal } from '@parity/ui';
@@ -44,7 +44,7 @@ import Store from './store';
 import Transactions from './Transactions';
 import styles from './account.css';
 
-const accountsHistory = HistoryStore.get('accounts');
+// const accountsHistory = HistoryStore.get('accounts');
 
 @observer
 class Account extends Component {
@@ -124,6 +124,7 @@ class Account extends Component {
         { this.renderVerificationDialog() }
         { this.renderActionbar(account) }
         <Page padded>
+          <AccountCard
             account={ account }
             disabled={ !isAvailable }
           />
