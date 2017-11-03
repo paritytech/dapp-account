@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import BigNumber from 'bignumber.js';
 
-import { fromWei } from '@parity/api/util/wei';
+import { fromWei } from '@parity/api/lib/util/wei';
 import { Checkbox, Form, Input } from '@parity/ui';
 import { DoneIcon, ErrorIcon, InfoIcon } from '@parity/ui/Icons';
 import { nullableProptype } from '@parity/shared/util/proptypes';
