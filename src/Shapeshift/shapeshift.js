@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import { Button, IdentityIcon, Portal } from '@parity/ui';
-import { CancelIcon, DoneIcon } from '@parity/ui/Icons';
+import { CancelIcon, DoneIcon } from '@parity/ui/lib/Icons';
 
 import shapeshiftLogo from '@parity/shared/assets/images/shapeshift-logo.png';
 

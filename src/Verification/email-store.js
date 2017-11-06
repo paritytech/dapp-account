@@ -18,7 +18,7 @@ import { observable, computed, action } from 'mobx';
 
 import { bytesToHex } from '@parity/api/lib/util/format';
 import { sha3 } from '@parity/api/lib/util/sha3';
-import EmailVerificationABI from '@parity/shared/contracts/abi/email-verification.json';
+import EmailVerificationABI from '@parity/shared/lib/contracts/abi/email-verification.json';
 
 import VerificationStore, {
   LOADING, QUERY_DATA, QUERY_CODE, POSTED_CONFIRMATION, DONE

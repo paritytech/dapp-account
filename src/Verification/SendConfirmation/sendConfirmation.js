@@ -18,8 +18,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { nullableProptype } from '@parity/shared/util/proptypes';
-import TxHash from '@parity/ui/TxHash';
+import { nullableProptype } from '@parity/shared/lib/util/proptypes';
+import TxHash from '@parity/ui/lib/TxHash';
 
 import { POSTING_CONFIRMATION, POSTED_CONFIRMATION } from '../store';
 

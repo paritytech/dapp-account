@@ -22,7 +22,7 @@ import { observer } from 'mobx-react';
 import { observable } from 'mobx';
 
 import { Button, IdentityIcon, Portal, RadioButtons } from '@parity/ui';
-import { CancelIcon, DoneIcon } from '@parity/ui/Icons';
+import { CancelIcon, DoneIcon } from '@parity/ui/lib/Icons';
 
 import SMSVerificationStore from './sms-store';
 import EmailVerificationStore from './email-store';

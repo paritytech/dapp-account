@@ -22,10 +22,10 @@ import { bindActionCreators } from 'redux';
 import { observer } from 'mobx-react';
 import { pick } from 'lodash';
 
-import { nullableProptype } from '@parity/shared/util/proptypes';
+import { nullableProptype } from '@parity/shared/lib/util/proptypes';
 import { Button, IdentityIcon, Portal, Warning } from '@parity/ui';
-import { newError } from '@parity/ui/Errors/actions';
-import { CancelIcon, NextIcon, PrevIcon } from '@parity/ui/Icons';
+import { newError } from '@parity/ui/lib/Errors/actions';
+import { CancelIcon, NextIcon, PrevIcon } from '@parity/ui/lib/Icons';
 
 import Details from './Details';
 import Extras from './Extras';

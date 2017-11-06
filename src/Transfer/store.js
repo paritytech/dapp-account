@@ -19,12 +19,12 @@ import { observable, computed, action, transaction } from 'mobx';
 import BigNumber from 'bignumber.js';
 
 import { fromWei } from '@parity/api/lib/util/wei';
-import { getLogger, LOG_KEYS } from '@parity/shared/config';
-import { eip20 as tokenAbi } from '@parity/shared/contracts/abi';
-import { DEFAULT_GAS } from '@parity/shared/util/constants';
-import { ETH_TOKEN } from '@parity/shared/util/tokens';
-import { getTxOptions } from '@parity/shared/util/tx';
-import GasPriceStore from '@parity/ui/GasPriceEditor/store';
+import { getLogger, LOG_KEYS } from '@parity/shared/lib/config';
+import { eip20 as tokenAbi } from '@parity/shared/lib/contracts/abi';
+import { DEFAULT_GAS } from '@parity/shared/lib/util/constants';
+import { ETH_TOKEN } from '@parity/shared/lib/util/tokens';
+import { getTxOptions } from '@parity/shared/lib/util/tx';
+import GasPriceStore from '@parity/ui/lib/GasPriceEditor/store';
 
 import ERRORS from './errors';
 

@@ -17,7 +17,7 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { DoneIcon } from '@parity/ui/Icons';
+import { DoneIcon } from '@parity/ui/lib/Icons';
 
 import styles from './done.css';
 

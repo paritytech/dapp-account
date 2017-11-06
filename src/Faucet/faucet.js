@@ -21,7 +21,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { txLink } from '@parity/etherscan';
 import { Button, ModalBox, Portal, ShortenedHash } from '@parity/ui';
-import { CloseIcon, DialIcon, DoneIcon, ErrorIcon, SendIcon } from '@parity/ui/Icons';
+import { CloseIcon, DialIcon, DoneIcon, ErrorIcon, SendIcon } from '@parity/ui/lib/Icons';
 
 import Store from './store';
 

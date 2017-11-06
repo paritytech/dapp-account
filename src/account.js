@@ -21,12 +21,12 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import HardwareStore from '@parity/shared/mobx/hardwareStore';
-// import HistoryStore from '@parity/shared/mobx/historyStore';
-import { newError } from '@parity/shared/redux/actions';
-import { setVisibleAccounts } from '@parity/shared/redux/providers/personalActions';
+import HardwareStore from '@parity/shared/lib/mobx/hardwareStore';
+// import HistoryStore from '@parity/shared/lib/mobx/historyStore';
+import { newError } from '@parity/shared/lib/redux/actions';
+import { setVisibleAccounts } from '@parity/shared/lib/redux/providers/personalActions';
 import { AccountCard, Actionbar, Button, ConfirmDialog, Input, Page, Portal } from '@parity/ui';
-import { DeleteIcon, DialIcon, EditIcon, LockedIcon, SendIcon, VerifyIcon, FileDownloadIcon } from '@parity/ui/Icons';
+import { DeleteIcon, DialIcon, EditIcon, LockedIcon, SendIcon, VerifyIcon, FileDownloadIcon } from '@parity/ui/lib/Icons';
 
 import shapeshiftBtn from '@parity/shared/assets/images/shapeshift-btn.png';
 
